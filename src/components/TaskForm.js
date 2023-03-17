@@ -1,8 +1,8 @@
-import { useState } from "react";
-import styles from "../styles/TaskItem.module.css";
+import { useState } from "react"
+
+import styles from "../styles/TaskItem.module.css"
 
 export default function TaskForm({ addTodo }) {
-
     const [text, setText] = useState("")
     const [id, setId] = useState(0)
 
@@ -29,8 +29,11 @@ export default function TaskForm({ addTodo }) {
                 placeholder="Nova tarefa"
                 onChange={(e) => setText(e.target.value)}>
             </input>
-            <button className={styles.add_button}
-                onClick={() => newTodo(text)} >Adicionar novo
+            <button
+                className={styles.add_button}
+                onClick={() => newTodo(text)}>
+                Adicionar novo
             </button>
-        </div>)
+        </div>
+    )
 }

@@ -1,8 +1,3 @@
-:root {
-    --main-color: #fff;
-    --seconday-color: #282730;
-}
-
 .task_list_box {
     max-width: 100%;
     height: auto;
@@ -20,7 +15,7 @@
 
 /* TODO: Checar se isso vai existir aqui mesmo */
 .new_button {
-    /* position: absolute; */
+
     width: 46px;
     height: 44px;
     /* left: 1062px;

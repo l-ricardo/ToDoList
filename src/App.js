@@ -1,11 +1,11 @@
-// import ButtonNew from './components/ButtonNew';
-import  TaskList  from './components/TaskList';
-import './styles/App.css'; // TODO: isso esta sendo usado?
+import TaskList from './components/TaskList'
+
+import './styles/App.css'
 
 export default function App() {
   return (
     <>
-      <h1>Minhas Tarefas</h1>
+      <h1>Minhas tarefas</h1>
       <TaskList />
     </>
   );
