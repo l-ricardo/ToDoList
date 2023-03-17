@@ -13,13 +13,19 @@ export default function TaskList() {
         setTodos([...todos, todo])
     }
 
+    const deleteTodo = (id) => {
+        let remainingTodos = todos.filter((todo) => todo.id != id)
+        setTodos(remainingTodos)
+    }
+
     return (
         <div className={styles.task_list_box}>
-            <h2>Pendentes</h2>
+            <h2>Pendentes ({todos.length})</h2>
+
             <TaskForm addTodo={addTodo} />
 
             {todos.map((todo) => (
-                <TaskItem key={todo.id} todo={todo} />
+                <TaskItem key={todo.id} todo={todo} deleteTodo={deleteTodo} />
             ))}
         </div>
     )
