@@ -20,6 +20,7 @@ export default function TaskList() {
 
     const deleteTodo = (id) => {
         let updatedTodos = todos.filter((todo) => todo.id != id)
+
         setTodos(updatedTodos)
     }
 
@@ -38,7 +39,12 @@ export default function TaskList() {
             <TaskForm addTodo={addTodo} />
 
             {todos.map((todo) => (
-                <TaskItem key={todo.id} todo={todo} deleteTodo={deleteTodo} doneTodoHandler={doneTodoHandler} />
+                <TaskItem
+                    key={todo.id}
+                    todo={todo}
+                    deleteTodo={deleteTodo}
+                    doneTodoHandler={doneTodoHandler}
+                />
             ))}
         </div>
     )

@@ -8,9 +8,9 @@ export default function TaskItem({ todo, deleteTodo, doneTodoHandler }) {
             >Feito</button>
 
             {todo.isDone ?
-                <p className="done">{todo.text}</p>
+                <p className={styles.done_text}>{todo.text}</p>
                 :
-                <p className="not_done">{todo.text}</p>
+                <p className={styles.not_done_text}>{todo.text}</p>
             }
 
             <button className={styles.edit_button} >Editar</button>

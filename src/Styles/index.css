@@ -79,30 +79,17 @@ h2 {
 
 }
 
-.done {
-  color: var(--seconday-color);
-  opacity: 0.5;
-
-  font-size: var(--p-font);
-  line-height: 24px;
-
-  padding: 0 .5rem;
-  width: 80%;
-}
-
-.not_done {
-  color: var(--seconday-color);
-
-  font-size: var(--p-font);
-  line-height: 24px;
-
-  padding: 0 .5rem;
-  width: 80%;
-}
 
 input {
   width: 80%;
   height: 75%;
+  color: var(--seconday-color);
+
+  font-size: var(--p-font);
+  line-height: 24px;
+
+  padding: 0 0.5rem;
+  width: 80%;
 }
 
 /* TODO: remover tudo pra baixo */

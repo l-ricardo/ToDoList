@@ -8,7 +8,7 @@
     height: auto;
 
     background: var(--seconday-color);
-    border-width: 0 .5rem .5rem 0;
+    border-width: 0 0.5rem 0.5rem 0;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.1);
     border-radius: 2.25rem;
