@@ -76,7 +76,7 @@ button {
 }
 
 .icons:hover {
-  color: purple;
+  color: var(--contrast-color);
   transform: scale(1.2);
   transition: all 0.2s ease-in-out;
 
