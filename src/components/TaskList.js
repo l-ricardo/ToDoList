@@ -38,6 +38,7 @@ export default function TaskList() {
         // TODO: Checar se essa gambiarra que serve ao proposito e é suficiente
         document.getElementById("input").value = todos[index].text
         deleteTodo(id)
+        // TODO: Pegar um href pra centralizar a tela com a caixa de texto
     }
 
     return (
