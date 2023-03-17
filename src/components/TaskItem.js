@@ -4,25 +4,16 @@ export default function TaskItem({ todo, doneTodoHandler, editTodo, deleteTodo }
     return (
         <div className={styles.task_item_box}>
 
-            {todo.isDone ?
             <button
-                className={styles.done_button}
+                className={todo.isDone ? styles.done_button : styles.not_done_button}
                 onClick={() => doneTodoHandler(todo.id)}>
                 Feito
             </button>
-                :
-            <button
-                className={styles.not_done_button}
-                onClick={() => doneTodoHandler(todo.id)}>
-                Feito
-            </button>
-            }
-            
-            {todo.isDone ?
-                <p className={styles.done_text}>{todo.text}</p>
-                :
-                <p className={styles.not_done_text}>{todo.text}</p>
-            }
+
+            <p
+                className={todo.isDone ? styles.done_text : styles.not_done_text}>
+                {todo.text}
+            </p>
 
             <button
                 className={styles.edit_button}
