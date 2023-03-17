@@ -20,6 +20,8 @@ export default function TaskForm({ addTodo }) {
     return (
         <div className={styles.task_item_box}>
             <input
+                type="text"
+                placeholder="Nova tarefa" 
                 onChange={(e) => setText(e.target.value)}>
             </input>
             <button className={styles.add_button}
