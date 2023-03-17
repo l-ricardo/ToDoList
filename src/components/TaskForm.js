@@ -15,13 +15,16 @@ export default function TaskForm({ addTodo }) {
         }
         setId(id + 1)
         addTodo(todo)
+        // TODO: Fazer isso do jeito mais bonito
+        document.getElementById("input").value = null
     }
 
     return (
         <div className={styles.task_item_box}>
             <input
+                id="input"
                 type="text"
-                placeholder="Nova tarefa" 
+                placeholder="Nova tarefa"
                 onChange={(e) => setText(e.target.value)}>
             </input>
             <button className={styles.add_button}
