@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styles from "../styles/TaskItem.module.css";
 
-export default function TaskForm({ todoHandler }) {
+export default function TaskForm({ addTodo }) {
 
     const [text, setText] = useState("")
     const [id, setId] = useState(0)
 
-    // Creates a new todo object and updates the id
+    // Creates a new todo object, updates the id and add it to the todos array
     const newTodo = (text) => {
         const todo = {
             text: text,
@@ -14,7 +14,7 @@ export default function TaskForm({ todoHandler }) {
             id: id
         }
         setId(id + 1)
-        todoHandler(todo)
+        addTodo(todo)
     }
 
     return (

@@ -9,14 +9,14 @@ import { useState } from "react";
 export default function TaskList() {
     const [todos, setTodos] = useState([])
 
-    const todoHandler = (todo) => {
+    const addTodo = (todo) => {
         setTodos([...todos, todo])
     }
 
     return (
         <div className={styles.task_list_box}>
             <h2>Pendentes</h2>
-            <TaskForm todoHandler={todoHandler} />
+            <TaskForm addTodo={addTodo} />
 
             {todos.map((todo) => (
                 <TaskItem key={todo.id} todo={todo} />
