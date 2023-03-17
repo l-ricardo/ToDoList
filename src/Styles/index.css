@@ -30,7 +30,7 @@ body {
   /* TODO: depois remover essa linha e deixar o background na tag html */
   background: linear-gradient(160deg, var(--ligth-color) 0%, var(--dark-color) 100%);
   border: 10px solid var(--main-color);
-  
+
   /* box-sizing: border-box; */
 
   /* position:relative; */
@@ -65,7 +65,7 @@ h1 {
 h2 {
   color: var(--main-color);
   opacity: 0.8;
-  
+
   padding-left: 5%;
   margin-bottom: 1rem;
   width: 95%;
@@ -79,17 +79,28 @@ h2 {
 
 }
 
-p {
+.done {
   color: var(--seconday-color);
+  opacity: 0.5;
 
   font-size: var(--p-font);
   line-height: 24px;
-  
+
   padding: 0 .5rem;
   width: 80%;
 }
 
-input{
+.not_done {
+  color: var(--seconday-color);
+
+  font-size: var(--p-font);
+  line-height: 24px;
+
+  padding: 0 .5rem;
+  width: 80%;
+}
+
+input {
   width: 80%;
   height: 75%;
 }

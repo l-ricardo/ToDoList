@@ -15,6 +15,7 @@ export default function TaskForm({ addTodo }) {
         }
         setId(id + 1)
         addTodo(todo)
+
         // TODO: Fazer isso do jeito mais bonito
         document.getElementById("input").value = null
     }
