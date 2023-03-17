@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import { Icon } from '@iconify/react';
+
 import styles from "../styles/TaskItem.module.css"
 
 export default function TaskForm({ addTodo }) {
@@ -31,8 +33,12 @@ export default function TaskForm({ addTodo }) {
             </input>
             <button
                 className={styles.add_button}
+                title="Salvar tarefa"
                 onClick={() => newTodo(text)}>
-                Adicionar novo
+                <Icon
+                    className="icons"
+                    icon="mdi:content-save"
+                />
             </button>
         </div>
     )

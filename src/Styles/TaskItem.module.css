@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 0.5rem;
+    
 }
 
 .done_text {
@@ -37,8 +38,6 @@
 
 .done_button {
     margin-right: auto;
-    /* TODO: Provisorio */
-    background-color: var(--seconday-color);
 }
 
 .not_done_button {
