@@ -32,6 +32,14 @@ export default function TaskList() {
         setTodos(updatedTodos)
     }
 
+    const editTodo = (id)=>{
+        const index = getIndexById(id)
+
+        // TODO: Checar se essa gambiarra que serve ao proposito e é suficiente
+        document.getElementById("input").value = todos[index].text
+        deleteTodo(id)
+    }
+
     return (
         <div className={styles.task_list_box}>
             <h2>Pendentes ({todos.length})</h2>
@@ -42,8 +50,9 @@ export default function TaskList() {
                 <TaskItem
                     key={todo.id}
                     todo={todo}
-                    deleteTodo={deleteTodo}
                     doneTodoHandler={doneTodoHandler}
+                    editTodo={editTodo}
+                    deleteTodo={deleteTodo}
                 />
             ))}
         </div>
