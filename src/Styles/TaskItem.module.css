@@ -1,0 +1,31 @@
+:root {
+    --main-color: #fff;
+    --seconday-color: #282730;
+}
+
+.task_item_box {
+    background: var(--main-color);
+    opacity: 0.8;
+    border-radius: 10px;
+
+    width: 90%;
+    height: 5rem;
+    margin-bottom: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .5rem;
+}
+
+.done_button {
+    margin-right: auto;
+}
+
+.edit_button {
+    margin-right: .5rem;
+}
+
+.delete_button {
+    margin-left: auto;
+}

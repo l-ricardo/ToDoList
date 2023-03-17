@@ -1,0 +1,40 @@
+:root {
+    --main-color: #fff;
+    --seconday-color: #282730;
+}
+
+.task_list_box {
+    max-width: 100%;
+    height: auto;
+
+    background: var(--seconday-color);
+    border-width: 0 .5rem .5rem 0;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2.25rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TODO: Checar se isso vai existir aqui mesmo */
+.new_button {
+    /* position: absolute; */
+    width: 46px;
+    height: 44px;
+    /* left: 1062px;
+    top: 222px; */
+}
+
+/* TODO: So e necessario se new_button existir */
+.task_list_header {
+    /* position: absolute; */
+    width: 864px;
+    height: 60px;
+    /* left: 288px;
+    top: 214px; */
+
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 2.25rem 2.25rem 0 0;
+}

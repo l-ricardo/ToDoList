@@ -1,16 +1,12 @@
-import ButtonNew from './components/ButtonNew';
-import TaskList from './components/TaskList';
-import './Styles/App.css';
+// import ButtonNew from './components/ButtonNew';
+import  TaskList  from './components/TaskList';
+import './styles/App.css'; // TODO: isso esta sendo usado?
 
 export default function App() {
   return (
     <>
-      <div>
-        <h1>Minhas Tarefas</h1>
-        <ButtonNew />
-      </div>
-      <TaskList /> // TODO: Lista pendentes
-      <TaskList /> // TODO: Lista concluidas
+      <h1>Minhas Tarefas</h1>
+      <TaskList />
     </>
   );
 }
