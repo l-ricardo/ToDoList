@@ -19,7 +19,7 @@ export default function TaskList() {
     }
 
     const deleteTodo = (id) => {
-        let updatedTodos = todos.filter((todo) => todo.id != id)
+        let updatedTodos = todos.filter((todo) => todo.id !== id)
 
         setTodos(updatedTodos)
     }
