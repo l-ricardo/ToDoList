@@ -22,7 +22,9 @@ export default function TaskForm({ addTask, inputText }) {
     }
 
     const submitHandler = () => {
-        newTask(text)
+        if (text.trim() !== "") {
+            newTask(text)
+        }
         setText("")
     }
 
