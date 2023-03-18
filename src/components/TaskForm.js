@@ -33,7 +33,6 @@ export default function TaskForm({ addTask, inputText }) {
             <input
                 id="input"
                 type="text"
-                maxLength={80}
                 value={text}
                 placeholder="Nova tarefa"
                 onChange={(e) => setText(e.target.value)}>

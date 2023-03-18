@@ -5,14 +5,11 @@
   --ligth-color: #30393E;
   --main-color: #fff;
   --seconday-color: #282730;
-  --contrast-color: purple;
+  --contrast-color: #2543da;
 
   --h1-font: 6.25rem;
-  /*100px*/
   --h2-font: 2.5rem;
-  /*40px*/
   --p-font: 1.25rem;
-  /* 20px*/
 }
 
 * {

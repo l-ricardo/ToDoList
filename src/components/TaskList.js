@@ -50,6 +50,7 @@ export default function TaskList() {
         const index = getIndexById(id);
         setInputText(tasks[index].text);
         deleteTask(id);
+        // TODO: Colocar uma href para focar no input e rolar a tela ate ele ao editar
     };
 
     return (
