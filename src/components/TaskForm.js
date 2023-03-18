@@ -4,25 +4,25 @@ import { Icon } from '@iconify/react';
 
 import styles from "../styles/TaskItem.module.css"
 
-export default function TaskForm({ addTodo, inputText }) {
+export default function TaskForm({ addTask, inputText }) {
     const [text, setText] = useState(inputText)
     const [id, setId] = useState(0)
 
     useEffect(() => { setText(inputText) }, [inputText])
 
-    // Creates a new todo object, updates the id and add it to the todos array
-    const newTodo = (text) => {
-        const todo = {
+    // Creates a new task object, updates the id and add it to the tasks array
+    const newTask = (text) => {
+        const task = {
             text: text,
             isDone: false,
             id: id
         }
         setId(id + 1)
-        addTodo(todo)
+        addTask(task)
     }
 
     const submitHandler = () => {
-        newTodo(text)
+        newTask(text)
         setText("")
     }
 

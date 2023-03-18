@@ -2,15 +2,15 @@ import styles from "../styles/TaskItem.module.css";
 
 import { Icon } from '@iconify/react';
 
-export default function TaskItem({ todo, doneTodoHandler, editTodo, deleteTodo }) {
+export default function TaskItem({ task, toggleTaskCompletion, editTask, deleteTask }) {
     return (
         <div className={styles.task_item_box}>
 
-            {todo.isDone ?
+            {task.isDone ?
                 <button
                     className={styles.done_button}
                     title="Clique para marcar como não feito"
-                    onClick={() => doneTodoHandler(todo.id)}>
+                    onClick={() => toggleTaskCompletion(task.id)}>
                     <Icon
                         className="icons"
                         icon="mdi:check-circle"
@@ -20,7 +20,7 @@ export default function TaskItem({ todo, doneTodoHandler, editTodo, deleteTodo }
                 <button
                     className={styles.not_done_button}
                     title="Clique para marcar como feito"
-                    onClick={() => doneTodoHandler(todo.id)}>
+                    onClick={() => toggleTaskCompletion(task.id)}>
                     <Icon
                         className="icons"
                         icon="mdi:checkbox-blank-circle-outline"
@@ -29,14 +29,14 @@ export default function TaskItem({ todo, doneTodoHandler, editTodo, deleteTodo }
             }
 
             <p
-                className={todo.isDone ? styles.done_text : styles.not_done_text}>
-                {todo.text}
+                className={task.isDone ? styles.done_text : styles.not_done_text}>
+                {task.text}
             </p>
 
             <button
                 className={styles.edit_button}
                 title="Editar tarefa"
-                onClick={() => editTodo(todo.id)}>
+                onClick={() => editTask(task.id)}>
                 <Icon
                     className="icons"
                     icon="mdi:pencil"
@@ -46,7 +46,7 @@ export default function TaskItem({ todo, doneTodoHandler, editTodo, deleteTodo }
             <button
                 className={styles.delete_button}
                 title="Deletar tarefa"
-                onClick={() => deleteTodo(todo.id)}>
+                onClick={() => deleteTask(task.id)}>
                 <Icon
                     className="icons"
                     icon="mdi:delete"

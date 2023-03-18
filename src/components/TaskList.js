@@ -7,49 +7,49 @@ import styles from "../styles/TaskList.module.css";
 
 
 export default function TaskList() {
-    const [todos, setTodos] = useState([])
+    const [tasks, setTasks] = useState([])
     const [notDoneCount, setNotDoneCount] = useState(0)
     const [inputText, setInputText] = useState("")
 
-    // Find the task position in the todos array using its id
+    // Find the task position in the tasks array using its id
     const getIndexById = (id) => {
-        return todos.findIndex(todo => todo.id === id);
+        return tasks.findIndex(task => task.id === id);
     }
 
     // Put uncompleted tasks above and update the notDoneCount
-    const sortTodos = (messyTodos) => {
-        const doneTodos = messyTodos.filter((todo) => todo.isDone === true)
-        const notDoneTodos = messyTodos.filter((todo) => todo.isDone === false)
-        setNotDoneCount(notDoneTodos.length)
-        const sortedTodos = [...notDoneTodos, ...doneTodos]
-        return sortedTodos
+    const sortTasks = (messyTasks) => {
+        const doneTasks = messyTasks.filter((task) => task.isDone)
+        const notDoneTasks = messyTasks.filter((task) => !task.isDone)
+        setNotDoneCount(notDoneTasks.length)
+        const sortedTasks = [...notDoneTasks, ...doneTasks]
+        return sortedTasks
     }
 
-    const addTodo = (todo) => {
-        let updatedTodos = [...todos, todo]
+    const addTask = (task) => {
+        let updatedTasks = [...tasks, task]
 
-        setTodos([...sortTodos(updatedTodos)])
+        setTasks([...sortTasks(updatedTasks)])
     }
 
-    const deleteTodo = (id) => {
-        let updatedTodos = todos.filter((todo) => todo.id !== id)
+    const deleteTask = (id) => {
+        let updatedTasks = tasks.filter((task) => task.id !== id)
 
-        setTodos([...sortTodos(updatedTodos)])
+        setTasks([...sortTasks(updatedTasks)])
     }
 
-    const doneTodoHandler = (id) => {
-        let updatedTodos = [...todos]
+    const toggleTaskCompletion = (id) => {
+        let updatedTasks = [...tasks]
         const index = getIndexById(id)
 
-        updatedTodos[index].isDone = !updatedTodos[index].isDone
+        updatedTasks[index].isDone = !updatedTasks[index].isDone
 
-        setTodos([...sortTodos(updatedTodos)])
+        setTasks([...sortTasks(updatedTasks)])
     }
 
-    const editTodo = (id) => {
+    const editTask = (id) => {
         const index = getIndexById(id);
-        setInputText(todos[index].text);
-        deleteTodo(id);
+        setInputText(tasks[index].text);
+        deleteTask(id);
     };
 
     return (
@@ -57,17 +57,17 @@ export default function TaskList() {
             <h2>Pendentes ({notDoneCount})</h2>
 
             <TaskForm
-                addTodo={addTodo}
+                addTask={addTask}
                 inputText={inputText}
             />
 
-            {todos.map((todo) => (
+            {tasks.map((task) => (
                 <TaskItem
-                    key={todo.id}
-                    todo={todo}
-                    doneTodoHandler={doneTodoHandler}
-                    editTodo={editTodo}
-                    deleteTodo={deleteTodo}
+                    key={task.id}
+                    task={task}
+                    toggleTaskCompletion={toggleTaskCompletion}
+                    editTask={editTask}
+                    deleteTask={deleteTask}
                 />
             ))}
         </div>
