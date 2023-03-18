@@ -3,7 +3,7 @@ Esse projeto é um desafio feito durante um curso de capacitação em ReactJS re
 
 
 ## Instruções para executar o projeto localmente
-1 - Certifique-se de ter instalado o [Node.js](https://nodejs.org/).
+1 - Certifique-se de ter instalado o [Node.js](https://nodejs.org/) (Versão 18).
 
 2 - No terminal navegue até o diretório raiz do projeto.
 
