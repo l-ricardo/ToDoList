@@ -8,20 +8,33 @@ import styles from "../styles/TaskList.module.css";
 
 export default function TaskList() {
     const [todos, setTodos] = useState([])
+    const [notDoneCount, setNotDoneCount] = useState(0)
+    const [inputText, setInputText] = useState("")
 
-    // Find the tasks position at the todos array using its id
+    // Find the task position in the todos array using its id
     const getIndexById = (id) => {
         return todos.findIndex(todo => todo.id === id);
     }
 
+    // Put uncompleted tasks above and update the notDoneCount
+    const sortTodos = (messyTodos) => {
+        const doneTodos = messyTodos.filter((todo) => todo.isDone === true)
+        const notDoneTodos = messyTodos.filter((todo) => todo.isDone === false)
+        setNotDoneCount(notDoneTodos.length)
+        const sortedTodos = [...notDoneTodos, ...doneTodos]
+        return sortedTodos
+    }
+
     const addTodo = (todo) => {
-        setTodos([...todos, todo])
+        let updatedTodos = [...todos, todo]
+
+        setTodos([...sortTodos(updatedTodos)])
     }
 
     const deleteTodo = (id) => {
         let updatedTodos = todos.filter((todo) => todo.id !== id)
 
-        setTodos(updatedTodos)
+        setTodos([...sortTodos(updatedTodos)])
     }
 
     const doneTodoHandler = (id) => {
@@ -29,23 +42,24 @@ export default function TaskList() {
         const index = getIndexById(id)
 
         updatedTodos[index].isDone = !updatedTodos[index].isDone
-        setTodos(updatedTodos)
+
+        setTodos([...sortTodos(updatedTodos)])
     }
 
-    const editTodo = (id)=>{
-        const index = getIndexById(id)
-
-        // TODO: Checar se essa gambiarra que serve ao proposito e é suficiente
-        document.getElementById("input").value = todos[index].text
-        deleteTodo(id)
-        // TODO: Pegar um href pra centralizar a tela com a caixa de texto
-    }
+    const editTodo = (id) => {
+        const index = getIndexById(id);
+        setInputText(todos[index].text);
+        deleteTodo(id);
+    };
 
     return (
         <div className={styles.task_list_box}>
-            <h2>Pendentes ({todos.length})</h2>
+            <h2>Pendentes ({notDoneCount})</h2>
 
-            <TaskForm addTodo={addTodo} />
+            <TaskForm
+                addTodo={addTodo}
+                inputText={inputText}
+            />
 
             {todos.map((todo) => (
                 <TaskItem
