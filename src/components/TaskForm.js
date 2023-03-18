@@ -38,8 +38,10 @@ export default function TaskForm({ addTask, inputText }) {
                 type="text"
                 value={text}
                 placeholder="Nova tarefa"
-                onChange={(e) => setText(e.target.value)}>
+                onChange={(e) => setText(e.target.value)}
+                onKeyUp={event => event.key === 'Enter' && submitHandler()}>
             </input>
+
             <button
                 className={styles.add_button}
                 title="Salvar tarefa"

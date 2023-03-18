@@ -17,7 +17,9 @@ export default function App() {
         pauseOnHover
         theme="dark"
       />
+
       <h1>Minhas tarefas</h1>
+
       <TaskList />
     </>
   )

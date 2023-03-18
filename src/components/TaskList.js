@@ -27,22 +27,18 @@ export default function TaskList() {
 
     const addTask = (task) => {
         let updatedTasks = [task, ...tasks]
-
         setTasks([...sortTasks(updatedTasks)])
     }
 
     const deleteTask = (id) => {
         let updatedTasks = tasks.filter((task) => task.id !== id)
-
         setTasks([...sortTasks(updatedTasks)])
     }
 
     const toggleTaskCompletion = (id) => {
         let updatedTasks = [...tasks]
         const index = getIndexById(id)
-
         updatedTasks[index].isDone = !updatedTasks[index].isDone
-
         setTasks([...sortTasks(updatedTasks)])
     }
 
