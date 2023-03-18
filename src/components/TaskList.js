@@ -26,7 +26,7 @@ export default function TaskList() {
     }
 
     const addTask = (task) => {
-        let updatedTasks = [...tasks, task]
+        let updatedTasks = [task, ...tasks]
 
         setTasks([...sortTasks(updatedTasks)])
     }
