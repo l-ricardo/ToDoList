@@ -1,6 +1,6 @@
-import styles from "../styles/TaskItem.module.css";
+import styles from "../styles/TaskItem.module.css"
 
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react"
 
 export default function TaskItem({ task, toggleTaskCompletion, editTask, deleteTask }) {
     return (

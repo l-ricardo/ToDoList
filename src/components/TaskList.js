@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from "react"
 
-import TaskItem from "./TaskItem";
-import TaskForm from "./TaskForm";
+import TaskItem from "./TaskItem"
+import TaskForm from "./TaskForm"
 
-import styles from "../styles/TaskList.module.css";
+import styles from "../styles/TaskList.module.css"
 
 
 export default function TaskList() {
@@ -13,7 +13,7 @@ export default function TaskList() {
 
     // Find the task position in the tasks array using its id
     const getIndexById = (id) => {
-        return tasks.findIndex(task => task.id === id);
+        return tasks.findIndex(task => task.id === id)
     }
 
     // Put uncompleted tasks above and update the notDoneCount
@@ -47,11 +47,11 @@ export default function TaskList() {
     }
 
     const editTask = (id) => {
-        const index = getIndexById(id);
-        setInputText(tasks[index].text);
-        deleteTask(id);
+        const index = getIndexById(id)
+        setInputText(tasks[index].text)
+        deleteTask(id)
         // TODO: Colocar uma href para focar no input e rolar a tela ate ele ao editar
-    };
+    }
 
     return (
         <div className={styles.task_list_box}>

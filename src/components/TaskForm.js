@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react"
+import { toast } from "react-toastify"
 
 import styles from "../styles/TaskItem.module.css"
 
@@ -24,8 +25,10 @@ export default function TaskForm({ addTask, inputText }) {
     const submitHandler = () => {
         if (text.trim() !== "") {
             newTask(text)
+            setText("")
+        } else {
+            toast("O campo de nova tarefa não pode estar vazio!")
         }
-        setText("")
     }
 
     return (
