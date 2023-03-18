@@ -17,5 +17,5 @@
 |Identificador|Status|Descrição|
 |-------------|------|---------|
 |RQNF01|ok|A To Do List deve ser feita utilizando ReactJs.|
-|RQNF02|-|A entrega do projeto deve ser feita através de uma release no GitHub.|
+|RQNF02|ok|A entrega do projeto deve ser feita através de uma release no GitHub.|
 |RQNF03|ok|Não é permitido o uso de AI na realização do projeto (ex. ChatGPT).|
