@@ -1,0 +1,72 @@
+html {
+  background: linear-gradient(160deg, var(--ligth-color) 0%, var(--dark-color) 100%);
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  color: var(--main-color);
+  opacity: 0.8;
+
+  max-width: 100%;
+  font-size: var(--h1-font);
+  margin: 2rem 2rem;
+}
+
+h2 {
+  color: var(--main-color);
+  opacity: 0.8;
+
+  padding-left: 5%;
+  margin-bottom: 1rem;
+  width: 95%;
+  height: 3.75rem;
+  line-height: 3.75rem;
+
+  font-size: var(--h2-font);
+
+  background-color: var(--dark-color);
+  border-radius: 2.25rem 2.25rem 0 0;
+}
+
+input {
+  width: 100%;
+  height: 75%;
+  color: var(--seconday-color);
+
+  font-size: var(--p-font);
+  line-height: 1.5rem;
+
+  padding: 0 0.5rem;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icons {
+  color: var(--seconday-color);
+
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.icons:hover {
+  color: var(--contrast-color);
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
