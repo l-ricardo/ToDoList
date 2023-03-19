@@ -22,6 +22,7 @@ export default function TaskForm({ addTask, inputText }) {
         addTask(task)
     }
 
+    // Checks if the input has valid text and creates a new task
     const submitHandler = () => {
         if (text.trim() !== "") {
             newTask(text)

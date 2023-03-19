@@ -5,10 +5,10 @@ import TaskForm from "./TaskForm"
 
 import styles from "../styles/TaskList.module.css"
 
-
 export default function TaskList() {
     const [tasks, setTasks] = useState([])
     const [notDoneCount, setNotDoneCount] = useState(0)
+    const [doneCount, setDoneCount] = useState(0)
     const [inputText, setInputText] = useState("")
 
     // Find the task position in the tasks array using its id
@@ -21,6 +21,7 @@ export default function TaskList() {
         const doneTasks = messyTasks.filter((task) => task.isDone)
         const notDoneTasks = messyTasks.filter((task) => !task.isDone)
         setNotDoneCount(notDoneTasks.length)
+        setDoneCount(doneTasks.length)
         const sortedTasks = [...notDoneTasks, ...doneTasks]
         return sortedTasks
     }
@@ -46,12 +47,11 @@ export default function TaskList() {
         const index = getIndexById(id)
         setInputText(tasks[index].text)
         deleteTask(id)
-        // TODO: Colocar uma href para focar no input e rolar a tela ate ele ao editar
     }
 
     return (
         <div className={styles.task_list_box}>
-            <h2>Pendentes ({notDoneCount})</h2>
+            <h2>Pendentes ({notDoneCount}) / Concluídas ({doneCount})</h2>
 
             <TaskForm
                 addTask={addTask}
